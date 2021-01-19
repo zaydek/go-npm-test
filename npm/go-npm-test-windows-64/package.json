@@ -1,0 +1,16 @@
+{
+	"name": "@zaydek/go-npm-test-windows-64",
+	"version": "0.0.3",
+	"description": "The Windows 64-bit binary for Go NPM Test.",
+	"repository": "https://github.com/zaydek/go-npm-test",
+	"license": "MIT",
+	"os": [
+		"win32"
+	],
+	"cpu": [
+		"x64"
+	],
+	"directories": {
+		"bin": "bin"
+	}
+}
