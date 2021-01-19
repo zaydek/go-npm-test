@@ -5,10 +5,10 @@
 	"repository": "https://github.com/zaydek/go-npm-test",
 	"files": [
 		"bin/",
-		"postinstall.js"
+		"installer.js"
 	],
 	"scripts": {
-		"postinstall": "node postinstall.js"
+		"postinstall": "node installer.js"
 	},
 	"bin": {
 		"go-npm-test": "bin/go-npm-test"

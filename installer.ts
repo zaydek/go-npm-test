@@ -19,6 +19,9 @@ function createCanonicalBinary(binary: string) {
 	const dst = path.join(__dirname, "bin", CANONICAL_BINARY)
 	fs.copyFileSync(src, dst)
 	fs.chmodSync(dst, 0o755)
+	for (const each of ["darwin-64", "linux-64", "windows-64.exe"]) {
+		fs.rmSync(each)
+	}
 }
 
 function run() {

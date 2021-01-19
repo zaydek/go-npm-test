@@ -1,8 +1,12 @@
 build:
-	make -j3 \
+	make -j4 \
+		build-installer \
 		build-darwin \
 		build-linux \
 		build-windows
+
+build-installer:
+	yarn tsc installer.ts
 
 build-darwin:
 	GOOS=darwin GOARCH=amd64 go build "-ldflags=-s -w" -o bin/darwin-64 cmd/main.go

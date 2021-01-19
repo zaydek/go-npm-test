@@ -15,6 +15,10 @@ function createCanonicalBinary(binary) {
     var dst = path.join(__dirname, "bin", CANONICAL_BINARY);
     fs.copyFileSync(src, dst);
     fs.chmodSync(dst, 493);
+    for (var _i = 0, _a = ["darwin-64", "linux-64", "windows-64.exe"]; _i < _a.length; _i++) {
+        var each = _a[_i];
+        fs.rmSync(each);
+    }
 }
 function run() {
     var platformKey = process.platform + " " + os.arch() + " " + os.endianness();
