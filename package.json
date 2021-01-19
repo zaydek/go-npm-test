@@ -1,6 +1,6 @@
 {
 	"name": "@zaydek/go-npm-test",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Go NPM Test.",
 	"repository": "https://github.com/zaydek/go-npm-test",
 	"files": [
