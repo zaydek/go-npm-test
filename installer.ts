@@ -4,11 +4,11 @@ const path = require("path")
 
 const CANONICAL_BINARY = "go-npm-test"
 
-const knownWindowsPackages: Record<string, string> = {
+const knownWindowsBinaries: Record<string, string> = {
 	"win32 x64 LE": "windows-64.exe",
 }
 
-const knownUnixlikePackages: Record<string, string> = {
+const knownUnixlikeBinaries: Record<string, string> = {
 	"darwin x64 LE": "darwin-64",
 	"darwin arm64 LE": "darwin-64", // Forward to darwin-64
 	"linux x64 LE": "linux-64",
@@ -34,7 +34,7 @@ function createCanonicalBinary(binary: string) {
 function run() {
 	const platformKey = `${process.platform} ${os.arch()} ${os.endianness()}`
 
-	const binary = knownUnixlikePackages[platformKey] || knownWindowsPackages[platformKey]
+	const binary = knownUnixlikeBinaries[platformKey] || knownWindowsBinaries[platformKey]
 	if (!binary) {
 		console.error(`unsupported platform: ${platformKey}`)
 		process.exit(1)
