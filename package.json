@@ -1,13 +1,10 @@
 {
-	"name": "go-npm-test",
+	"name": "@zaydek/go-npm-test",
 	"version": "0.0.1",
 	"description": "Go NPM Test",
 	"repository": "https://github.com/zaydek/go-npm-test",
-	"scripts": {
-		"postinstall": "node install.js"
-	},
 	"bin": {
-		"go-npm-test": "bin/go-npm-test"
+		"go-npm-test": "bin/go-npm-test_darwin_amd64"
 	},
 	"license": "MIT"
 }
