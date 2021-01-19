@@ -14,14 +14,21 @@ const knownUnixlikePackages: Record<string, string> = {
 	"linux x64 LE": "linux-64",
 }
 
+// Resolves absolute bin paths for a name.
+function bin(name: string) {
+	return path.join(__dirname, "bin", name)
+}
+
 function createCanonicalBinary(binary: string) {
-	const src = path.join(__dirname, "bin", binary)
-	const dst = path.join(__dirname, "bin", CANONICAL_BINARY)
+	const src = bin(binary)
+	const dst = bin(CANONICAL_BINARY)
+
 	fs.copyFileSync(src, dst)
 	fs.chmodSync(dst, 0o755)
-	for (const each of ["darwin-64", "linux-64", "windows-64.exe"]) {
-		fs.rmSync(each)
-	}
+
+	fs.rmSync(bin("darwin-64"))
+	fs.rmSync(bin("linux-64"))
+	fs.rmSync(bin("windows-64.exe"))
 }
 
 function run() {

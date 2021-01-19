@@ -17,10 +17,8 @@ build-linux:
 build-windows:
 	GOOS=windows GOARCH=amd64 go build "-ldflags=-s -w" -o bin/windows-64.exe cmd/main.go
 
-publish:
-	npm publish
-
 clean:
+	rm bin/installer.js
 	rm bin/darwin-64
 	rm bin/linux-64
 	rm bin/windows-64.exe
