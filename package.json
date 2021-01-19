@@ -3,6 +3,10 @@
 	"version": "0.0.4",
 	"description": "Go NPM Test.",
 	"repository": "https://github.com/zaydek/go-npm-test",
+	"files": [
+		"bin/",
+		"postinstall.js"
+	],
 	"scripts": {
 		"postinstall": "node postinstall.js"
 	},
