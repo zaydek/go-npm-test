@@ -16,6 +16,8 @@ function bin(name: string) {
 }
 
 function createCanonicalBinary(binary: string) {
+	console.log("createCanonicalBinary")
+
 	const src = bin(binary)
 	const dst = bin(CANONICAL_BINARY)
 
