@@ -1,6 +1,6 @@
+# macOS
 .DS_Store
 
+# NPM / Yarn
 bin/
 node_modules/
-
-installer.js
